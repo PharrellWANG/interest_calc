@@ -1,6 +1,8 @@
 README
 ======
 
+.. note:: This project bears low value for open source.
+
 Notice: This project bears low value for open source.
 
 Using latex to generate the document for repay amount calulation.
