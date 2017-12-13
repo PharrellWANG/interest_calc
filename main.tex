@@ -2,7 +2,7 @@
 
 %% Language and font encodings
 \usepackage[english]{babel}
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
 %% Sets page size and margins
@@ -13,7 +13,13 @@
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
-
+\usepackage[backend=bibtex,style=ieee,natbib=true]{biblatex}
+\addbibresource{sample.bib} % The filename of the bibliography
+\hypersetup{
+colorlinks=false, %set true if you want colored links
+linktoc=all,     %set to all if you want both sections and subsections linked
+linkcolor=black,  %choose some color if you want links to stand out
+}
 \title{Zwap Interest Calculation}
 \author{Pharrell.zx}
 
@@ -22,6 +28,7 @@
 
 \begin{abstract}
 This document specifies how to calculate below items for short-term loan (a.k.a fun fund loan).
+Source~\cite{RN001}.
 \begin{itemize}
       \item early settlement amount
       \item total repay amount when overdue within 1 month
@@ -70,7 +77,9 @@ here
 \[d_o = d_c - d_d\]
 \[x =\frac{b}{90}\]
 
-% \cite{greenwade93}
+% Source~\cite{greenwade93}
+
 % \bibliographystyle{alpha}
 % \bibliography{sample}
+\printbibliography[heading=bibintoc]
 \end{document}
