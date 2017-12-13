@@ -1,0 +1,76 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Zwap Interest Calculation}
+\author{Pharrell.zx}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This document specifies how to calculate below items for short-term loan (a.k.a fun fund loan).
+\begin{itemize}
+      \item early settlement amount
+      \item total repay amount when overdue within 1 month
+\end{itemize}
+\end{abstract}
+
+\section{Early settlement amount}
+Let us denote
+\begin{itemize}
+      \item \textbf{interest rate per day} as \(x\),
+      \item \textbf{borrower interest rate} as \(b\), it would be 0.05 if no discount, else if the discount is 0.9, it would be 0.045.
+      \item \textbf{repay date} as \(d_c\)
+      \item \textbf{draw down date} as \(d_d\)
+      \item \textbf{overdue days} as \(d_o\)
+      \item \textbf{total principal (the disbursed amount)} as \(p\)
+      \item \textbf{early settlement amount} as \(A_{es}\)
+\end{itemize}
+
+Then the early settlement amount is: 
+
+\[A_{es} = p\times(1+x\times d_o)\]
+
+here
+
+\[d_o = d_c - d_d\]
+\[x =\frac{b}{90}\]
+
+\section{Repay amount when overdue within 1 month}
+
+Let us denote
+\begin{itemize}
+      \item \textbf{interest rate per day} as \(x\),
+      \item \textbf{borrower interest rate} as \(b\), it would be 0.05 if no discount, else if the discount is 0.9, it would be 0.045.
+      \item \textbf{repay date} as \(d_c\)
+      \item \textbf{due date} as \(d_d\)
+      \item \textbf{overdue days} as \(d_o\)
+      \item \textbf{total principal (the disbursed amount)} as \(p\)
+      \item \textbf{amount to pay} as \(A_{t}\)
+\end{itemize}
+
+Then the amount is: 
+\[A_{t} = (p\times(1+b))\times(1+x\times d_o)\]
+
+here
+
+\[d_o = d_c - d_d\]
+\[x =\frac{b}{90}\]
+
+% \cite{greenwade93}
+% \bibliographystyle{alpha}
+% \bibliography{sample}
+\end{document}
